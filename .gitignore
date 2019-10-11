@@ -1,0 +1,19 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+#ignore file types
+*.png
+*.JPG
+*.PNG
+*.Rproj
+*.gslides
+
+#ignore files
+test-doc.md
+test-doc.rmd
+Terminal v Bash.txt
+
+#ignore directory
+/Logos
