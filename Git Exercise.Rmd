@@ -1,0 +1,160 @@
+---
+title: "Git Basics"
+author: Fall 2019, BIOL 5700 <br> <i><small>Advanced Data Analytics</small></i> </br>
+output:
+  html_notebook: 
+    number_sections: yes
+    theme: readable
+    toc: yes
+  html_document:
+    df_print: paged
+    rows.print: 10
+  pdf_document: default
+editor_options: 
+  chunk_output_type: inline
+---
+# What is Git?
+<a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version control system which is generally used in conjunction with, but is not the same as <a href="https://www.github.com/" target="_blank">GitHub</a>, which is a software used for versioning, code sharing, and publishing. Essentially, **Git** helps you keep track of changes to files within a project or project folder in snapshots, while **GitHub** provides a centralized location to store and share information. We will talk more about GitHub in our next exercise. For now we will focus on some of the primary commands to help with versioning control using Git.
+
+## Getting Started
+
+**Git** is an open-source software that can be installed on Window, Mac, or Linux consoles. Fortunately, **Git** has already been installed on the lab computers, but if you are using your personal laptop take this time to follow the <a href="https://git-scm.com/downloads" target="_blank">link</a> to the proper version of the software, download, and install it on your computer. Once installed, navigate to the *Git Bash* terminal or other terminal application on your computer. On *Windows* you can access this via the <u>Start Menu</u>:
+
+<p align="center">
+![*windows start menu highlighting the git bash terminal*](C:/Users/gentryc/Google Drive/APSU/Courses/BIOL 5700 Advanced Data Analytics\Exercise_7/GitBashPC.jpg "Windows Start Menu")
+</p>
+
+*Git Bash* is a command line terminal with BASH (bourne again shell) emulation for PC. Its appearance is similar to other terminals you may have interfaced with previously. On a *Mac* you can use spotlight to locate the terminal window for that operating system or to avoid directory issues, navigate to the appropriate folder and select *"new terminal at folder"* from the menu.
+
+<p align="center">
+![*git bash terminal*](C:/Users/gentryc/Google Drive/APSU/Courses/BIOL 5700 Advanced Data Analytics/Exercise_7/GitBashTerminal.jpg "Git Bash Terminal")
+</p>
+
+One of the first steps to setting up **Git** is identifing who is actually responsible for the changes to the content being edited. In order to set this up you can use the following two lines of code:
+
+```
+git config --global user.name "INSERT YOUR NAME HERE"
+```
+and
+```
+git config --global user.email "INSERT YOUR EMAIL HERE"
+```
+
+You can use ```git config --list``` if you need to review the information you provided with the other *git config* commands.
+
+If you plan to use **Git** in combination with a code sharing or publishing service like:<br></br>
+<br></br>
+<p align="center">
+<a href="https://bitbucket.org/product"><img src="C:\\Users\\gentryc\\Google Drive\\APSU\\Courses\\BIOL 5700 Advanced Data Analytics\\Exercise_7\\BitBucket.png" style="width:150px; height:150px" title="BitBucket" alt="BitBucket"></a> <a href="https://www.github.com/"><img src="C:\\Users\\gentryc\\Google Drive\\APSU\\Courses\\BIOL 5700 Advanced Data Analytics\\Exercise_7\\GitHub.png" style="width:150px; height:150px" title="GitHub" alt="GitHub"></a> <a href="https://www.gitkraken.com/"><img src="C:\\Users\\gentryc\\Google Drive\\APSU\\Courses\\BIOL 5700 Advanced Data Analytics\\Exercise_7\\GitKraken.png" style="width:176px; height:150px" title="GitKraken" alt="GitKraken"></a> <a href="https://about.gitlab.com/"><img src="C:\\Users\\gentryc\\Google Drive\\APSU\\Courses\\BIOL 5700 Advanced Data Analytics\\Exercise_7\\GitLab.png" style="width:164px; height:150px" title="GitLab" alt="GitLab"></a> <a href="https://sourceforge.net/"><img src="C:\\Users\\gentryc\\Google Drive\\APSU\\Courses\\BIOL 5700 Advanced Data Analytics\\Exercise_7\\SourceForge.png" style="width:150px; height:150px" title="SourceForge" alt="SourceForge"></a> 
+</p>
+<br></br>
+you may be able to interface with programs like <a href="https://www.rstudio.com/" target="_blank">RStudio</a> or <a href="https://www.anaconda.com/distribution/" target="_blank">Anaconda</a> for version control. In the next exercise we will use RStudio for version control and continue using that same method for the remainder of the course.
+
+### Git Commands
+
+Although we can [git](https://www.merriam-webster.com/dictionary/pun) by with using a program like RStudio because of its built-in version control, you can use Git on your machine to create a local *git repository*. A repository is like a folder for your project or project folder. Your project repository contains all of your project files and stores the revision history for each file. Repositories and be owned or shared with others utilizing that same computer or network folder. In the case of a cloud-based repository, that information can be shared by individuals on different networks. For now, we will be working locally to create a git repository. 
+
+To start, please create a folder in your student folder in the <u>Z: Drive</u> titled **7-Git**.
+<br></br>
+
+> Tip: various applications dislike the utilization of spaces in your directory path. It's good to get in the habit of replacing them with underscores or dashes.
+<br></br> 
+
+Now we need to use **Git Bash** or the terminal window to provide some actions via command line. The first command will be to change the working directory for your git repository.
+
+```
+cd z:/Students/YOUR NAME/7-Git
+
+or in the terminal window
+
+Z:
+cd \Students\YOUR NAME\7-Git
+```
+
+This will direct **Git** to identify the appropriate folder to initiate the repository. Initializing the folder lets **Git** know it needs to be tracked for changes. This can be done using the following command:
+
+```
+git init
+```
+
+The terminal window should respond with "Initialized empty Git repository in Z:/Students/YOUR NAME/7-Git/.git/" and show the directory as /z/Students/YOUR NAME/7-Git (master)
+
+If you navigate to your student folder on the Z: Drive you should now see a new folder *.git* that was created. Within that folder there should be a number of other folder and files. If you want to see information regarding this folder you can type:
+
+```
+git status
+```
+
+Git will then report the level of the project (branch master), whether there are current commits (No commits yet) and state there is "nothing to commit (create/copy files and use "git add" to track)" information within the project folder. Now it is time to begin adding files and/or folders to be tracked by **Git**. To do this you can simply drag and drop files from a previous exercise or from a new project. So lets start by adding the information from your *1-Markdown* (data, scripts, and html) to the new **7-Git** folder you created above. You can use the ```ls``` command in bash or ```dir``` in the terminal window to see those files in the new folder.
+
+Once you have files added to the folder you can choose to track the changes on an individual file using:
+```
+git add <file name>
+```
+Alternatively you can mark every file using the following command:
+```
+git add . 
+```
+For this example, go ahead and use the command to add all of the added files and folders. Once you have added these files, run the ```git status``` command again. This should provide you with details regarding the number of files marked in the repository. This is also called *staging files*. You will see this terminology when we begin to use **Git** and **GitHub** with RStudio.
+
+If you want to remove a file once it has been stagged you can use the following command:
+
+```
+git rm --cached <file name>
+```
+
+In order to finalize this repository, you must *commit* (sort of the **Git** term for save) these files. To do that, you must also add a commit message. This message should be concise and detail the changes or additions that are being made. For example, you could say "adding rmd" or "updated r script" or something similar to that. Use the following command to commit the changes and add your own commit message.
+```
+git commit -m "Place the required commit message here"
+```
+When we begin to utilize **GitHub** for version control we will use the *push* command to add those changes to any code sharing site. However, for this example we will not need the *push* command.
+```
+git push
+```
+
+To test your understanding of the process above, create a new *text file* in the directory called test.txt and try repeating the steps above using the ```git add test.txt``` command. Then commit the file using an apporpriate commit message. When finished use the following command:
+```
+git log
+```
+What does this tell you?
+
+### Git Ignore
+
+If you don't want to commit all of the files in a given project you can create a **.gitignore** file. This is a simple text file that creates rules for all users of the project to ignore committing particular files or folders. This file should be <u>staged and committed</u> to the repository so it is globally available for all users. 
+
+To create the *.gitignore* file, type the following command:
+
+```
+touch .gitignore
+
+or in the terminal window
+
+type nul > .gitignore
+```
+Once you have created the file, navigate to your student drive and right click on the file to open with a text editor such as Code Writer, NotePad, [TextPad](https://www.textpad.com), [Visual Studio Code](https://code.visualstudio.com/), WordPad, etc. The same text commenting syntax that operates in programs like **R** also work here. So if you include a **#** this will be treated as a comment, blank lines match no information so are not run and can be used as separators for legibility, etc. 
+
+In the *.gitignore* file, I generally like to begin with a comment regarding what needs to be ignored. The following is a simple example:
+
+```
+#Ignore these folders
+images/
+examples/
+
+#Ignore these file types
+*.cvs
+*.txt
+*.docx
+*.xlsx
+
+#Ignore these files
+test_nb.Rmd
+.Rhistory
+```
+Since the *.gitignore* file is stored in your repository, you don't need to provide the entire path to specific files or folders. **Git** and **GitHub** will search the entire repository and list of commits to ignore the files identified in the *.gitignore* document. Be sure to add and commit the file once it has been updated.
+
+## Final Thoughts
+
+At this point you have initalized a folder, stagged files, and committed them. Generally speaking, we will repeat all of these steps within *Rstudio* in the next exercise. However, **Git** can be used locally, without a cloud-based repository, and is a great way to manage long-term projects. Even if you aren't using [**GitHub**](https://github.com/), you should probably go ahead and [create an account](https://github.com/join), they provide a summary [cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) for commonly used Git commands. This can be helpful if you forget some of the basic instructions for creating repositories, staging files, commit and commenting, or just to [git by](https://youtu.be/UVtpXvzzXiA?t=22).
+
+# Your Turn!
+Using the skills you acquired above, create a git repository for **Exercise 2** titled *2-GLM*. In this repository <u>include</u> the *markdown document*, *html file*, and the **R** *project files*. Additionally, create a *.gitignore* file to <u>exclude</u> any *image files* you created, the *excel dataset*, and any *ancillary folders*.
