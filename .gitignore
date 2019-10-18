@@ -9,11 +9,13 @@
 *.PNG
 *.Rproj
 *.gslides
+*.pdf
 
 #ignore files
 test-doc.md
 test-doc.rmd
 Terminal v Bash.txt
+Git Exercise.Rmd
 
 #ignore directory
 /Logos
