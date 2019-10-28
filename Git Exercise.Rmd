@@ -180,4 +180,4 @@ Using the skills you acquired above, create a git repository for **Exercise 2** 
 
 ## Additional Help
 
-After creating this exercise I stumbled onto this YouTube video, [Learn Git In 15 Minutes](https://www.youtube.com/watch?v=USjZcfj8yxE&t=602s), from [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw/featured). This video provides a fantastic visusal, step-by-step look at several **Git** commands. If you run into issues moving forward this video can likely answer your question, and remember, [Google](www.google.com) is your friend.
+After creating this exercise I stumbled onto this YouTube video, [Learn Git In 15 Minutes](https://www.youtube.com/watch?v=USjZcfj8yxE&t=602s), from [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw/featured). This video provides a fantastic visusal, step-by-step look at several **Git** commands. If you run into issues moving forward this video can likely answer your question, and remember, [Google](https://www.google.com) is your friend.
