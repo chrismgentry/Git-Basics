@@ -1,18 +1,37 @@
 ---
-title: "Git Basics"
-author: Fall 2019, BIOL 5700 <br> <i><small>Advanced Data Analytics</small></i> </br>
+title: Git Basics <br><small>Advanced Data Analytics</small></br>
+author: BIOL 5700, Fall 2019
 output:
-  html_notebook: 
-    number_sections: yes
-    theme: readable
-    toc: yes
-  html_document:
+  html_notebook:
     df_print: paged
     rows.print: 10
+    theme: cosmo
+    highlight: breezedark
+    number_sections: yes
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
   pdf_document: default
 editor_options: 
   chunk_output_type: inline
 ---
+<style type="text/css">
+
+h1.title {
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+</style>
+
 # What is Git?
 <a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version control system which is generally used in conjunction with, but is not the same as <a href="https://www.github.com/" target="_blank">GitHub</a>, which is a software used for versioning, code sharing, and publishing. Essentially, **Git** helps you keep track of changes to files within a project or project folder in snapshots, while **GitHub** provides a centralized location to store and share information. We will talk more about GitHub in our next exercise. For now we will focus on some of the primary commands to help with versioning control using Git.
 
@@ -158,3 +177,7 @@ At this point you have initalized a folder, stagged files, and committed them. G
 
 # Your Turn!
 Using the skills you acquired above, create a git repository for **Exercise 2** titled *2-GLM*. In this repository <u>include</u> the *markdown document*, *html file*, and the **R** *project files*. Additionally, create a *.gitignore* file to <u>exclude</u> any *image files* you created, the *excel dataset*, and any *ancillary folders*.
+
+## Additional Help
+
+After creating this exercise I stumbled onto this YouTube video, [Learn Git In 15 Minutes](https://www.youtube.com/watch?v=USjZcfj8yxE&t=602s), from [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw/featured). This video provides a fantastic visusal, step-by-step look at several **Git** commands. If you run into issues moving forward this video can likely answer your question, and remember, [Google](www.google.com) is your friend.
