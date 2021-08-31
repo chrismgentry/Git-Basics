@@ -10,12 +10,16 @@
 *.Rproj
 *.gslides
 *.pdf
+*.nb.html
+*.txt
 
 #ignore files
 test-doc.md
 test-doc.rmd
 Terminal v Bash.txt
 Git Exercise.Rmd
+previous_index.html
+
 
 #ignore directory
 /Logos

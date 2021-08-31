@@ -1,6 +1,6 @@
 ---
-title: Git Basics <br><small>Advanced Data Analytics</small></br>
-author: BIOL 5700, Fall 2019
+title: "Git Basics <br><small>Advanced Data Analytics</small></br>"
+author: "BIOL 5660"
 output:
   html_notebook:
     df_print: paged
@@ -8,13 +8,17 @@ output:
     theme: cosmo
     highlight: breezedark
     number_sections: yes
-    toc: true
+    toc: yes
     toc_float:
-      collapsed: false
-      smooth_scroll: true
+      collapsed: no
+      smooth_scroll: yes
   pdf_document: default
-editor_options: 
+  html_document:
+    toc: yes
+    df_print: paged
+editor_options:
   chunk_output_type: inline
+  mode: gfm
 ---
 <style type="text/css">
 
